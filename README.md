@@ -1,3 +1,6 @@
+
+_Open [gh-page site](https://eabdrazakov.github.io/TextAnalyzer/)_
+
 //Simple Word Counter
 
 Describe: wordCounter()
