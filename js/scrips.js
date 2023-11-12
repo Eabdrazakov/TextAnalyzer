@@ -74,8 +74,20 @@ function handleFormSubmission(event) {
     } else {
         document.querySelector("div#bolded-passage").innerText = null;
     }
+
+    document.getElementById("btn-reset").removeAttribute("id");
+}
+
+function handleReset() {
+    document.getElementById("total-count").innerText = "";
+    document.getElementById("selected-count").innerText = "";
+    document.getElementById("bolded-passage").innerText = "";
+    document.getElementById("form-reset").reset();
+    document.getElementById("btn-reset").getAttribute("id");
+
 }
 
 window.addEventListener("load", function () {
     document.querySelector("form").addEventListener("submit", handleFormSubmission);
+    document.getElementById("btn-reset").addEventListener("click", handleReset);
 });
