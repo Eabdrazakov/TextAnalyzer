@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Text Analyzer</title>
+    <script src="js/scrips.js"></script>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Text Analyzer</h1>
+        <form>
+            <div class="form-group">
+                <p>Input a text passage to get a total word count:</p>
+                <textarea id="text-passage" name="text-passage" class="form-control"></textarea>
+                <p>Optionally enter a word to count the number of times it occurs in the passage:</p>
+                <input type="text" id="word" name="word" class="form-control"><br />
+                <button type="submit" class="btn btn-success">Submit Survey</button>
+            </div>
+        </form>
+        <p>Total Word Count: <span id="total-count"></span></p>
+        <br />
+        <p>Selected Word Count:<span id="selected-count"></span></p>
+        <div id="bolded-passage">
+
+        </div>
+    </div>
+</body>
+
+</html>
