@@ -39,12 +39,14 @@ function boldPassage(word, text) {
         return null;
     }
     const p = document.createElement("p");
-    let textArray = text.split(" ");
+    let textArray = text.split(/\b/);
     textArray.forEach(function (element, index) {
-        if (word === element) {
-            const bold = document.createElement("strong");
-            bold.append(element);
-            p.prepend(bold);
+        const bold = document.createElement("strong");
+
+        if (word.toLowerCase() === element.toLowerCase()) {
+
+            bold.innerText = element;
+            p.append(bold);
         } else {
             p.append(element);
         }
@@ -74,3 +76,6 @@ function handleFormSubmission(event) {
     }
 }
 
+window.addEventListener("load", function () {
+    document.querySelector("form").addEventListener("submit", handleFormSubmission);
+});
