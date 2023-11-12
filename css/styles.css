@@ -1,0 +1,16 @@
+.form-control {
+    width: 1300px;
+    height: 80px;
+}
+
+.form-contol {
+    width: 1300px;
+    height: 30px;
+}
+
+.btn-success {
+    background-color: green;
+    color: aliceblue;
+    margin-top: 9px;
+    height: 30px;
+}
