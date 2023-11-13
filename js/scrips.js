@@ -57,6 +57,33 @@ function boldPassage(word, text) {
     return p;
 }
 
+function wordFrequency(text) {
+    if (isEmpty(text)) {
+        return 0;
+    }
+
+    const textArray = text.split(" ");
+    let resultArray = [];
+    textArray.forEach(function (word) {
+        let isFound = false;
+        resultArray.forEach(function (element) {
+            if (element[0].toLowerCase() === word.toLowerCase()) {
+                element[1] += 1;
+                isFound = true;
+            }
+        });
+        if ((!isFound) && (word != "")) {
+            resultArray.push([word.toLowerCase(), 1]);
+        }
+    });
+    resultArray.sort(function (a, b) {
+        return b[1] - a[1];
+    });
+
+
+    return resultArray;
+}
+
 
 
 //UI Logic
@@ -78,6 +105,9 @@ function handleFormSubmission(event) {
     } else {
         document.querySelector("div#bolded-passage").innerText = null;
     }
+
+    const resultArray = wordFrequency(passage);
+    console.log(resultArray);
 
 
 }

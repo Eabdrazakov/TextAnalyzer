@@ -47,5 +47,35 @@ hello
 
 Test: "It should wrap words that match in strong tags but not words that don't." Code: const word = "hello"; const text = "hello there"; boldPassage(word, text); Expected Output:
 
-hello there
+Describe: wordFrequency()
+Test: "It should return null if no text is entered."
+Code:
+const text = "";
+wordFrequency(text);
+Expected Output: null
+
+Test: "It should return word and haw many times each word is used."
+Code: 
+const text = "Hello word word";
+wordFrequency(text);
+Expected Output:
+Hello 1;
+Word 2;
+
+Test: "It should return word and haw many times each word is used and don't take into account empty species."
+Code: 
+const text = "Hello word word";
+wordFrequency(text);
+Expected Output:
+Hello 1;
+Word 2;
+
+Test: "It should return word and haw many times each word is used."
+Code: 
+const text = "Hello Word word";
+wordFrequency(text);
+Expected Output:
+Hello 1;
+Word 2;
+
 
