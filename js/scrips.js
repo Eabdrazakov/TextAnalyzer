@@ -35,11 +35,11 @@ function numberOfOccurrencesInText(word, text) {
 }
 
 function boldPassage(word, text) {
-    if ((isEmpty(text)) || (isEmpty(text))) {
+    if ((isEmpty(text)) || (isEmpty(word))) {
         return null;
     }
     const p = document.createElement("p");
-    let textArray = text.split(/\b/);
+    let textArray = text.split(" ");
     textArray.forEach(function (element, index) {
         const bold = document.createElement("strong");
 
@@ -58,7 +58,11 @@ function boldPassage(word, text) {
 }
 
 
+
+//UI Logic
+
 function handleFormSubmission(event) {
+    document.getElementById("btn-reset").setAttribute("id", "hidden");
     event.preventDefault();
     const passage = document.getElementById("text-passage").value;
     const word = document.getElementById("word").value;
@@ -75,15 +79,16 @@ function handleFormSubmission(event) {
         document.querySelector("div#bolded-passage").innerText = null;
     }
 
-    document.getElementById("btn-reset").removeAttribute("id");
+
 }
+
 
 function handleReset() {
     document.getElementById("total-count").innerText = "";
     document.getElementById("selected-count").innerText = "";
     document.getElementById("bolded-passage").innerText = "";
     document.getElementById("form-reset").reset();
-    document.getElementById("btn-reset").getAttribute("id");
+    document.getElementById("btn-reset").setAttribute("id");
 
 }
 
